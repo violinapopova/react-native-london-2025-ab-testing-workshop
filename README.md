@@ -9,11 +9,11 @@ This workshop is structured as a progressive hands-on session, building from loc
 - **Bare React Native App** (`bare-app/`): The same travel app ejected to bare workflow, using Firebase Remote Config.
 
 **Workshop Flow**:
-1. **Intro (20-30 mins)**: Slides/discussion on A/B basics and clipmyhorse.tv examples (no code yet).
-2. **Local Testing (20 mins)**: `cd local-testing && npm install && expo start`. Tweak variants in-app.
-3. **PostHog Integration (Expo, 25 mins)**: Switch to `expo-posthog`, add SDK, test remote bucketing.
-4. **Firebase in Bare RN (20 mins)**: `cd bare-app && npm install`, configure Remote Config, run native builds.
-5. **Wrap-Up & Challenges (10 mins)**: Metrics review, Q&A.
+1. **Intro**: Slides/discussion on A/B basics and clipmyhorse.tv examples (no code yet).
+2. **Local Testing**: `cd local-testing && npm install && expo start`. Tweak variants in-app.
+3. **PostHog Integration**: Switch to `expo-posthog`, add SDK, test remote bucketing.
+4. **Firebase in Bare RN**: `cd bare-app && npm install`, configure Remote Config, run native builds.
+5. **Wrap-Up & Challenges**: Metrics review, Q&A.
 
 Fork/clone the repo pre-workshop (instructions will be updated with the exact URL). We'll pair-program via screen shares if needed. The code will be with comments for quick jumps.
 

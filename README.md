@@ -1,14 +1,5 @@
 # React Native London 2025 A/B Testing Workshop
 
-How to Use This Repo
-This workshop is structured as a progressive hands-on session, building from local A/B testing basics to full remote integrations. We'll use the provided starter repo (link forthcoming—check the workshop invite email or Slack for the GitHub URL once pushed). The repo will include:
-
-• Local Testing Folder (local-testing/): A simple Expo managed React Native app with Context + AsyncStorage for variant mocking. Start here for the intro exercises.
-• The same Expo managed app (expo-posthog/): integrated with PostHog for feature flags and experiments.
-• Bare React Native App (bare-app/): The same travel app ejected to bare workflow, using Firebase Remote Config.
-
-# A/B Testing in React Native Workshop
-
 ## How to Use This Repo
 
 This workshop is structured as a progressive hands-on session, building from local A/B testing basics to full remote integrations. We'll use the provided starter repo (link forthcoming—check the workshop invite email or Slack for the GitHub URL once pushed). The repo will include:

@@ -12,7 +12,7 @@ This workshop is structured as a progressive hands-on session, building from loc
 1. **Intro**: Slides/discussion on A/B basics and clipmyhorse.tv examples (no code yet).
 2. **Local Testing**: `cd local-testing && npm install && expo start`. Tweak variants in-app.
 3. **PostHog Integration**: Switch to `expo-posthog`, add SDK, test remote bucketing.
-4. **Firebase in Bare RN**: `cd bare-app && npm install`, configure Remote Config, run native builds.
+4. **Firebase in Bare RN**: real-world example with React Native app.
 5. **Wrap-Up & Challenges**: Metrics review, Q&A.
 
 Fork/clone the repo pre-workshop (instructions will be updated with the exact URL). We'll pair-program via screen shares if needed. The code will be with comments for quick jumps.

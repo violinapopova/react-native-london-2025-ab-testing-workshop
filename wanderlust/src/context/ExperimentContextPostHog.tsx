@@ -42,17 +42,36 @@ export const ExperimentProvider: React.FC<ExperimentProviderProps> = ({ children
   const [exp, setExp] = useState<ExperimentConfig>(DEFAULT_EXPERIMENTS);
   const [isLoading, setIsLoading] = useState(true);
   const [locale, setLocale] = useState<string>('en');
-  const postHog = usePostHog();
+  const [isPostHogReady, setIsPostHogReady] = useState(false);
+  
+  let postHog: any = null;
+  
+  // Safely get PostHog hook with error handling
+  try {
+    postHog = usePostHog();
+  } catch (error) {
+    console.warn('[PostHog] Navigation context not ready, postponing initialization:', error.message);
+  }
 
   // Load experiments when PostHog is ready
   useEffect(() => {
-    if (postHog) {
-      loadExperiments();
-      detectLocale().catch((error) => {
-        console.error('Error detecting locale:', error);
-      });
+    if (postHog && !isPostHogReady) {
+      console.log('[PostHog] PostHog instance ready, initializing...');
+      setIsPostHogReady(true);
+      
+      // Small delay to ensure navigation is fully ready
+      setTimeout(() => {
+        loadExperiments();
+        detectLocale().catch((error) => {
+          console.error('Error detecting locale:', error);
+        });
+      }, 100);
+    } else if (!postHog && !isPostHogReady) {
+      // Use defaults if PostHog is not available
+      console.log('[PostHog] Not available, using defaults');
+      setIsLoading(false);
     }
-  }, [postHog]);
+  }, [postHog, isPostHogReady]);
 
   const detectLocale = async () => {
     // First check if user has saved a locale preference

@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useFeatureFlag, usePostHog } from 'posthog-react-native';
 
-const PostHogExample: React.FC = () => {
+const PostHogExampleScreen: React.FC = () => {
   const postHog = usePostHog();
   
   // Example 1: Simple boolean flag
@@ -200,4 +200,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PostHogExample;
+export default PostHogExampleScreen;

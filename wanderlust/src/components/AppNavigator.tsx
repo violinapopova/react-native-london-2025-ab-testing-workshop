@@ -5,7 +5,7 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 import HomeScreen from '../screens/HomeScreen';
 import BookingScreen from '../screens/BookingScreen';
 import SearchScreen from '../screens/SearchScreen';
-import PostHogExample from '../components/PostHogExample';
+import PostHogExampleScreen from '../screens/PostHogExampleScreen';
 import { STORAGE_KEYS } from '../utils/mockData';
 
 const Stack = createNativeStackNavigator();
@@ -51,7 +51,7 @@ const AppNavigator: React.FC = () => {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen
             name="PostHogExample"
-            component={PostHogExample}
+            component={PostHogExampleScreen}
             options={{ 
               title: 'PostHog A/B Test Demo',
               headerShown: true,

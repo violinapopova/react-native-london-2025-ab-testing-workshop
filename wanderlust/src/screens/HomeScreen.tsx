@@ -7,7 +7,30 @@ import {
   Platform,
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
+import { CompositeNavigationProp } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+
+// Define the navigation types properly for nested navigators
+type RootStackParamList = {
+  Home: undefined;
+  PostHogExample: undefined;
+  Search: undefined;
+  Booking: undefined;
+  Onboarding: undefined;
+};
+
+type TabParamList = {
+  Explore: undefined;
+  Saved: undefined;
+  LocalDeals: undefined;
+};
+
+type NavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<TabParamList>,
+  NativeStackNavigationProp<RootStackParamList>
+>;
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
 import ExploreScreen from './ExploreScreen';
@@ -22,11 +45,14 @@ import DebugMenu from '../components/DebugMenu';
 const Tab = createBottomTabNavigator();
 
 const HomeScreen: React.FC = () => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<NavigationProp>();
   const { exp, locale } = useExperiments();
   const { t } = useTranslation();
   const [bannerDismissed, setBannerDismissed] = useState(false);
   const [debugMenuVisible, setDebugMenuVisible] = useState(false);
+
+  // Check if navigation is available to prevent errors
+  const isNavigationReady = navigation && typeof navigation.dispatch === 'function';
   
   // Detect current variant based on experiment values
   // Variant B: 3-step onboarding, Reserve Spot, Elite badge, Green color
@@ -58,7 +84,16 @@ const HomeScreen: React.FC = () => {
           {__DEV__ && (
             <TouchableOpacity
               style={styles.postHogButton}
-              onPress={() => navigation.navigate('PostHogExample')}
+              onPress={() => {
+                console.log('PostHog button pressed');
+                if (isNavigationReady) {
+                  navigation.dispatch(
+                    CommonActions.navigate('PostHogExample')
+                  );
+                } else {
+                  console.warn('Navigation not ready');
+                }
+              }}
             >
               <Icon name="science" size={20} color="#FF6B6B" />
             </TouchableOpacity>
@@ -66,7 +101,15 @@ const HomeScreen: React.FC = () => {
           <LanguageSwitcher />
           <TouchableOpacity
             style={styles.searchButton}
-            onPress={() => navigation.navigate('Search')}
+            onPress={() => {
+              if (isNavigationReady) {
+                navigation.dispatch(
+                  CommonActions.navigate('Search')
+                );
+              } else {
+                console.warn('Navigation not ready for search');
+              }
+            }}
           >
             <Icon name="search" size={20} color="#666" />
           </TouchableOpacity>

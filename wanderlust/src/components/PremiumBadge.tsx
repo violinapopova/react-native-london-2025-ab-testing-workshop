@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { useTranslation } from '../i18n/useTranslation';
 
 const PremiumBadge: React.FC = () => {

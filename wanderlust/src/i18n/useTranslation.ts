@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { i18n } from './i18n';
 
 export const useTranslation = () => {

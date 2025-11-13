@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { Image } from 'expo-image';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { useTranslation } from '../i18n/useTranslation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { STORAGE_KEYS } from '../utils/mockData';

@@ -7,7 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { useTranslation } from '../i18n/useTranslation';
 
 interface LocalDeal {

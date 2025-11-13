@@ -12,7 +12,7 @@ import { Image } from 'expo-image';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation, RouteProp } from '@react-navigation/native';
 import { Destination } from '../types';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { useTranslation } from '../i18n/useTranslation';
 import PremiumBadge from '../components/PremiumBadge';
 

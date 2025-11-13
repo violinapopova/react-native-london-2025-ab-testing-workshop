@@ -13,7 +13,7 @@ import { MaterialIcons as Icon } from '@expo/vector-icons';
 import ExploreScreen from './ExploreScreen';
 import SavedScreen from './SavedScreen';
 import LocalDealsScreen from './LocalDealsScreen';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { useTranslation } from '../i18n/useTranslation';
 import Banner from '../components/Banner';
 import LanguageSwitcher from '../components/LanguageSwitcher';
@@ -53,6 +53,14 @@ const HomeScreen: React.FC = () => {
               onPress={() => setDebugMenuVisible(true)}
             >
               <Icon name="settings" size={20} color="#666" />
+            </TouchableOpacity>
+          )}
+          {__DEV__ && (
+            <TouchableOpacity
+              style={styles.postHogButton}
+              onPress={() => navigation.navigate('PostHogExample')}
+            >
+              <Icon name="science" size={20} color="#FF6B6B" />
             </TouchableOpacity>
           )}
           <LanguageSwitcher />
@@ -171,6 +179,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#e0e0e0',
+  },
+  postHogButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#fff5f5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#FF6B6B',
   },
 });
 

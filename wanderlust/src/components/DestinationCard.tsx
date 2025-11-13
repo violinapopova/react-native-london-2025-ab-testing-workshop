@@ -14,7 +14,7 @@ import Animated, {
   withSpring,
   runOnJS,
 } from 'react-native-reanimated';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { Destination } from '../types';
 import { useTranslation } from '../i18n/useTranslation';
 import PremiumBadge from './PremiumBadge';

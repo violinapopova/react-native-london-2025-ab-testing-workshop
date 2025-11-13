@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
-import { useExperiments } from '../context/ExperimentContext';
+import { useExperiments } from '../context/ExperimentContextPostHog';
 import { useTranslation } from '../i18n/useTranslation';
 
 const LANGUAGES = [

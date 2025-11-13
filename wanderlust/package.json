@@ -22,6 +22,7 @@
     "expo-localization": "~15.0.3",
     "expo-status-bar": "~1.12.1",
     "i18n-js": "^4.4.2",
+    "posthog-react-native": "^4.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.0",

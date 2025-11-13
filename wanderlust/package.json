@@ -1,0 +1,46 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~3.2.3",
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "expo": "~51.0.0",
+    "expo-application": "~5.9.1",
+    "expo-device": "~6.0.2",
+    "expo-file-system": "~17.0.1",
+    "expo-image": "~1.13.0",
+    "expo-localization": "~15.0.3",
+    "expo-status-bar": "~1.12.1",
+    "i18n-js": "^4.4.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.0",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-safe-area-context": "4.10.1",
+    "react-native-screens": "~3.31.1",
+    "react-native-svg": "15.2.0",
+    "react-native-web": "~0.19.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@expo/cli": "^0.18.31",
+    "@types/react": "~18.2.79",
+    "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "send": ">=0.19.0",
+    "@react-native-community/cli": ">=17.0.1"
+  },
+  "private": true
+}

@@ -88,16 +88,7 @@ Spend 20-30 mins verifying. If issues arise, check `npx expo doctor` or `npx rea
    - Android: `npx expo run:android --device`  
    Select your device. App should install and run.
 
-5. **Quick Bare RN Test** (For Later Section):  
-   In a new folder:  
-   ```
-   npx @react-native-community/cli@latest init BareTest --version 0.75
-   cd BareTest
-   npx react-native run-android  # Or run-ios on Mac
-   ```  
-   (Builds native project—expect some setup prompts.)
-
-6. **Services Quick-Check**:  
+5. **Services Quick-Check**:  
    - Expo: Scan QR from `npx expo start` in Expo Go app.  
    - PostHog: Log a test event via their JS snippet in a playground.  
    - Firebase: Upload a dummy config to Remote Config console.
